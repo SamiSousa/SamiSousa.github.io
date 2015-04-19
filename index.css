@@ -22,12 +22,12 @@ h1
 	list-style-type:	square;
 }
 
-id = "Skills"
+.Skills
 {
 	font-style: 	italic;
 
 }
-id = "SkillsList"
+.SkillsList
 {
 	font-style:		bold;
 	color:			blue;
