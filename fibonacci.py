@@ -1,3 +1,5 @@
+#This code was written in Python 3.4
+
 def fibseries(x, series=False):		#generates a list of the fibonacci series from 0th term to xth term, and returns the xth term
 						#fast because it's a very linear problem of addition. Terms get very long after x = 1000
 						#optional argument "series" allows for return of list of fibonacci series
