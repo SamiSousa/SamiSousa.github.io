@@ -21,3 +21,14 @@ h1
 	display:			list-item;
 	list-style-type:	square;
 }
+
+id = "Skills"
+{
+	font-style: 	italic;
+
+}
+id = "SkillsList"
+{
+	font-style:		bold;
+	color:			blue;
+}
