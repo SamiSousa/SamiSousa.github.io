@@ -21,6 +21,7 @@ h1
 	padding-bottom:		5px;
 	display:			list-item;
 	list-style-type:	square;
+	background-image: url("blank.png");
 }
 
 .Skills
@@ -35,7 +36,7 @@ h1
 }
 .toIndex
 {
-	font-size: 		10px;
+	font-size: 		14px;
 }
 .disclaimer
 {
