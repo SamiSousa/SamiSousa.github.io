@@ -1,0 +1,470 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sami's Home</title>
+    <!--[if IE]><link rel="shoftcut icon" href="./myicon.ico"><![endif]-->
+    <link rel="icon"
+          href="/myicon.ico">
+    <style>
+        /* High level styles, for broad element regions */
+        .page-style{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            vertical-align: middle;
+            overflow-x: hidden;
+        }
+        #top{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #banner{
+            background-color: #215897;
+            background-image: url(./img/birb.jpg);
+            background-attachment: scroll;
+            background-repeat: no-repeat;
+            background-position: left 30%;
+            height: 200px;
+            width: 100%;
+            color: whitesmoke;
+            margin-top: 70px;
+        }
+        #navigation{
+            z-index: 1;
+            background-color: black;
+            color: whitesmoke;
+            height: 70px;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            padding: 10px;
+            padding-top: 0;
+            padding-bottom: 0px;
+        }
+            #navigation ul{
+            list-style: none;
+        }
+            #navigation li{
+            display: inline;
+            margin: 10px;
+        }
+
+        #scroll-content{
+            width: 100%;
+            background-color: gray;
+        }
+        #about{
+            position: relative;
+            left: 0;
+            top: -70px;
+        }
+        #projects{
+            position: relative;
+            left: 0;
+            top: -70px;
+        }
+        #footer{
+            background-color: black;
+            color: whitesmoke;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .banner-text{
+            padding-top: 0.4em;
+            font-size: 80px;
+        }
+
+        /* Link styles */
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+            a:hover{
+            color: #8fdbff;
+        }
+            .type1 a:hover{
+            color: blue;
+        }
+
+        /* Styles for generic content */
+        .content-header{
+            margin: 0;
+            padding: 10px;
+            background-color: black;
+            color: whitesmoke;
+            text-align: center;
+        }
+        .content-block{
+            margin: 0;
+            padding: 20px;
+            padding-left: 50px;
+            padding-right: 50px;
+            display: flex;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .content-block div{
+            text-align: center;
+            vertical-align: middle;
+        }
+        .type1{
+            background-color: #cfdbff;
+            color: #32343c;
+            flex-direction: row-reverse;
+        }
+        .type2{
+            background-color: #32343c;
+            color: #cfdbff;
+            flex-direction: row;
+        }
+        .text-block{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+            .type1 .text-block{
+            text-align: right;
+        }
+            .type2 .text-block{
+            text-align: left;
+        }
+
+        img{
+            width: 500px;
+            height: auto;
+        }
+        div{
+            max-width: 100%;
+        }
+
+        #grid{
+            padding: 0;
+            flex-direction: column;
+        }
+        .row{
+            margin: 0;
+            padding: 0;
+        }
+        .tile, .tile p{
+            text-align: center;
+            vertical-align: middle;
+            margin: 0;
+            padding: 10px;
+            width: 100%;
+            height: auto;
+        }
+        .tile img{
+            max-width: 500px;
+            height: auto;
+                
+        }
+        #profile-square{
+            width: 400px;
+            height: auto;
+        }
+        #giraffe img{
+            height: 600px;
+            width: auto;
+        }
+        /* Footer elements */
+        .column{
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+        }
+        .links{
+            float: right;
+            text-align: left;
+        }
+        .contacts{
+            width: 280px;
+            float: right;
+            text-align: left;
+        }
+
+        /* Responsive style for smaller screens */
+        
+        @media (max-width:500px){
+            .page-style{
+                font-size: 18px;
+            }
+            .type1, .type2, .text-block{
+                padding: 0;
+                margin: 0;
+                padding-top: 10px;
+                padding-bottom: 5px;
+                padding-right: 15px;
+            }
+            #navigation{
+                height: 50px;
+            }
+            #banner{
+                margin-top: 50px;
+            }
+        }
+        @media (max-width:920px){
+            .banner-text{
+                padding-top: 0.8em;
+                font-size: 50px;
+            }
+            img{
+                max-width: 90%;
+                height: auto;
+            }
+            .tile img{
+                max-width: 90%;
+                height: auto;
+            }
+            #giraffe img{
+                max-width: 90%;
+                height: auto;
+            }
+            iframe{
+                width: 400px;
+                height: 225px;
+            }
+            .type1, .type2{
+                flex-direction: column;
+                text-align: center;
+                vertical-align: middle;
+                align-items: center;
+
+            }
+            .type1 .text-block{
+                text-align: center;
+            }
+            .type2 .text-block{
+                text-align: center;
+            }
+            h2, h3{
+                text-align: center;
+            }
+            #footer h3{
+                text-align: inherit;
+            }
+
+        }
+        @media (min-width: 1300px){
+            .page-style{
+                font-size: 30px;
+            }
+            .banner-text{
+                font-size: 100px;
+            }
+            #navigation{
+                height: 90px;
+            }
+            #banner{
+                margin-top: 90px;
+            }
+            #about{
+                position: relative;
+                left: 0;
+                top: -90px;
+            }
+            #projects{
+                position: relative;
+                left: 0;
+                top: -90px;
+            }
+            .content-block{
+                padding: 30px;
+                padding-left: 10vw;
+                padding-right: 10vw;
+            }
+            #footer .contacts{
+                padding-right: 150px;
+            }
+            iframe{
+                width: 720px;
+                height: 405px;
+            }
+            .tile img{
+                min-width: 720px;
+                height: auto;    
+            }
+            img{
+                width: 720px;
+                height: auto;
+            }
+            #profile-square{
+                width: 460px;
+                height: auto;
+            }
+            #giraffe img{
+                height: 800px;
+                width: auto;
+            }
+        }
+
+    </style>
+</head>
+<body class="page-style">
+
+    <!-- #top here as anchor for navigation bar -->
+    <div id="top"></div>
+
+    <!-- Navigation bar -->
+    <div id="navigation">
+       <ul>
+           <li><a href="/#top">Home</a></li>
+           <li><a href="/#about">About</a></li>
+           <li><a href="/#projects">Projects</a></li>
+           <li><a href="/#footer">Contact</a></li>
+
+       </ul>
+    </div>
+
+    <!-- Page banner -->
+    <div id="banner">
+        <div>
+            <h1  class="banner-text">Sami Shahin</h1>
+        </div>
+    </div>
+
+    <!-- Main content organized within here -->
+    <div id="scroll-content">
+
+        <!-- #about here as anchor for navigation bar -->
+        <div id="about"></div>
+
+        <!-- Some details about me -->
+        <div id="about-me" class="content-block type2">
+            
+            <div>
+                <img alt="Me" title="Hey it's me" id="profile-square" src="./img/ProfessionalCandid_large.png"/>
+            </div>
+            
+            <div class="text-block">
+                <h2>About me</h2>
+                <p>Hey I'm Sami! You may have seen me around campus over the past couple of years,
+                    probably studying at Ingalls/Pavement/Photonics or ordering food at Nud Pob/Einstein's/the GSU.
+                    Or maybe I'm the guy who held the door for you right before class,
+                    or the guy who bumped into you as I was rushing to class (sorry!).
+                    Either way, I hope this website helps you get to know me better.</p>
+            </div>
+        </div>
+
+        <!-- An except on giraffe because why not -->
+        <div id="giraffe" class="content-block type1">
+            <div>
+                <img alt="Tall boys" title="Me and a totally real giraffe" src="./img/me_and_giraffe_large.jpg"/>
+            </div>
+            <div class="text-block">
+                <h2>Giraffe</h2>
+                <p>
+                    I love giraffes. I feel a strong kinship towards them.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- Here's some food I ate -->
+        <div id="FoodBlog" class="content-header type2">
+            <h1>Food</h1>
+        </div>
+
+        <div class="content-block type2">
+            <div>
+                <img alt="Some cake" title="I had cake at Versailles" src="./img/dessert_at_Versailles_large.jpg"/>
+            </div>
+            <div class="text-block">
+                <h2>I love food</h2>
+                <p>Who doesn't? I'm not afraid to admit that most of the time all I can think about is what I'm going to eat next.</p>
+            </div>
+        </div>
+
+        
+        <div id="grid" class="content-block">
+
+            <div class="row">
+                <div id="Bento" class="type2">
+                    <div class="tile">
+                        <h2>Lunch Special</h2>
+                        <h3><a target="_blank" href="http://www.finsboston.com/ONLINEORDER.html">Fin's Sushi</a></h3>
+                        <img src="./img/bento_large.jpg"/>
+                    </div>
+                </div>
+                <div id="Sushi" class="type2">
+                    <div class="tile">
+                        <h2>Attractive Tuna Roll</h2>
+                        <h3><a target="_blank" href="http://tatakilauderhill.com/">Tataki Sushi</a></h3>
+                        <img src="./img/sushi_large.jpg"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="Shrimp" class="type2">
+                    <div class="tile">
+                        <h2>Shrimp Appetizer</h2>
+                        <h3><a target="_blank" href="http://www.antoniosbeaconhill.com/">Antonio's Cucina</a></h3>
+                        <img src="./img/shramp_large.jpg"/>
+                    </div>
+                </div>
+                <div id="Donut" class="type2">
+                    <div class="tile">
+                        <h2>Heart-Shaped Doughnut</h2>
+                        <h3><a target="_blank" href="https://www.dunkindonuts.com/">Dunkin Donuts</a></h3>
+                        <img src="./img/heart_donut_large.jpg"/>
+                        <div class="text-block">
+                            <p>It's like they know me...</p>
+                        </div>
+                    </div>
+                </div>
+           </div>
+
+
+        </div>
+        
+        <!-- #project here as anchor for navigation bar -->
+        <div id="projects"></div>
+        <div class="content-header type1">
+            <h1>Projects</h1>
+        </div>
+
+        <div id="TimeToPill" class="content-block type1">
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ILH23QtaJZU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="text-block">
+                <h2>Time to Pill</h2>
+                <h3>EC535 Embedded Systems</h3>
+                <p>Project that I worked on with Brandon Ng</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Contacts -->
+    <div id="footer">
+
+        <div class="column contacts">
+            <h3>Contact</h3>
+            <p>
+                Phone: (978)-821-8078 <br />
+                Email: ssshahin@bu.edu
+
+            </p>
+        </div>
+
+        <div class="column links">
+            <h3>Quick Links</h3>
+                <a target="_blank" href="https://www.linkedin.com/in/samisousa/">LinkedIn</a> <br />
+                <a target="_blank" href="https://github.com/SamiSousa">GitHub</a>
+                
+        </div>
+
+    </div>
+
+</body>
+</html>
