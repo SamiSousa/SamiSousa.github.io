@@ -11,3 +11,27 @@ myImage.onclick = function(){
 	}
 }
 
+
+
+var myButton = document.querySelector('button');
+var myHeading = document.querySelector('h1');
+
+function setUserName(){
+	var myName = prompt('Please enter your name.');
+	localStorage.setItem('name', myName);
+	myHeading.textContent = 'You\'re cool, ' + myName;
+}
+
+if (!localStorage.getItem('name')){
+	setUserName();
+}else {
+
+	// username set, so load it
+	var storedName = localStorage.getItem('name');
+	myHeading.textContent = 'You\'re cool, ' + storedName;
+}
+
+// on clicking button, prompt user for new username
+myButton.onclick = function(){
+	setUserName();
+}
